@@ -1,0 +1,23 @@
+{
+  "name": "625-enterprise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hay-bee-cee/625.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hay-bee-cee/625/issues"
+  },
+  "homepage": "https://github.com/hay-bee-cee/625#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
