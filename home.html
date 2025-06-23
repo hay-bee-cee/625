@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="625-Enterprise offers professional documentation, research, graphic design, and web development services. We help you present smarter, research deeper, and create better results for your projects.">
+    <title>625-Enterprise | Home</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        /*=====Base Styles=====*/
+        body {
+            background-color:hsl(0, 1%, 19%);
+            font: 15px Helvetica, sans-serif;
+            padding:0;
+            margin:0;
+            height:100%;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .container {
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap:10px;
+        }
+
+        
+
+        /*=====Header Styles=====*/
+        header{
+            color:aliceblue;
+            padding:30px 100px 0px 130px;
+            min-height:100px;
+            margin-bottom: 0;
+            background-color: #2e383f;
+            position:fixed;
+            top:0;
+            left:0;
+            width: 100vw;
+            box-sizing: border-box;
+            z-index: 1002;
+            box-shadow: 0 0px 10px 0 rgba(0,0,0,0.25);
+        }
+
+        
+        header nav{
+            margin-top:5px;
+            margin-bottom: 15px;
+        }
+
+        header ul {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin-right: 30px;
+            padding: 0;
+        }
+
+        /*=====Navigation Styles=====*/
+        ul{
+            margin:0;
+            padding:0;
+        }
+        
+        header a{
+            color:aliceblue;
+            text-decoration:none;
+            font-size:13px;
+            font-weight: 550;
+        }
+
+        header a:hover{
+            color:#98a3aa;
+        }
+  
+        header li {
+            display:inline;
+            padding: 0 10px 0 10px;
+        }
+
+        header .highlight, 
+        header .current a{
+            color:rgb(189, 184, 212);
+            font-weight:bold;
+        }
+
+         #branding img {
+                height: 60px;
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+
+
+        /*=====Hamburger Menu Styles=====*/
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            gap: 7px;
+            margin-left: 8px;
+            margin-right: 0;
+            z-index: 100;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 4px;
+            width: 22px;
+            background: aliceblue;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+  
+        /* ====== Main Content====== */        
+        main{
+            padding-top: 100px;
+        }
+
+        /* ====== Description Section ====== */        
+        .desc-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 30px auto 0 auto;
+            padding: 24px 18px;
+            border-radius: 10px;
+            color: aliceblue;
+
+        }
+
+        .desc-section .desc-heading {
+            font-size: 5.8em;
+            font-weight: bold;
+            margin: 10px 0 10px 0;
+            align-self: start;
+        }
+
+        .desc-section .desc-text {
+            font-size: 1.2em;
+            font-weight: 500;
+            line-height: 2.5;
+            color: #fff;
+            margin-top:10px;
+            text-align: center;
+        }
+
+        /* ====== Services Intro Section ====== */       
+        #services-intro {
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px 10px 20px;
+            background-color: #3856686e;
+            margin-top: 20px;
+        }
+
+        #services-intro h2 {
+            font-size: 39px;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+
+        #services-intro p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.6;
+            word-spacing: 4px;
+            color: #cccccc;
+            margin-bottom: 50px;
+        }
+
+         /* ====== Service Boxes Section ====== */
+         #boxes {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: aliceblue;
+            background-color: #2e383f;
+            margin-top: 0px;
+        }       
+        
+       #boxes .box {
+            flex: 1 1 30%;
+            max-width: 32%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;       
+        }
+  
+        #boxes .box img{
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.685);
+             transition: 0.5s ease-in-out; 
+        }
+
+        #boxes a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        #boxes a img:hover {
+            box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.87);
+            transition: 1s ease-in-out; 
+        }
+       
+        /* ====== Footer Styles ====== */        
+        footer{
+            padding:5px;
+            margin-top:50px;
+            color:#ffffff;
+            background-color:#20232550;
+            text-align: center;
+            font-size: 11px;
+        
+        }
+
+        /* ======= Responsive: Tablets (max-width: 900px)====== */
+        @media (max-width: 900px) {
+            header {
+                margin-bottom: 0;
+                padding: 0 0 0 4px;
+                min-height:80px;
+            }
+
+            header a{
+                font-size: 18px;
+            }
+                    
+            header nav ul {
+                flex-direction: column;
+                gap: 7px;
+                width: 100%;
+                padding:0 0;
+            }
+            header li {            
+                width: 100%;
+                text-align: right;        
+            }
+
+            header .container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            #branding img {
+                height: 50px;
+            }
+
+            /*===== Hamburger nav dropdown styles=====*/       
+            .hamburger {
+                display: flex;
+                margin-right: 0;
+                margin-left: 8px;
+                align-items: center;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: none;
+                position: absolute;
+                top: 80px;
+                left:0;
+                right:auto;
+                min-width:100%;
+                width:auto;
+                z-index: 1000;
+                padding: 10px 0;
+                align-items: flex-end;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .container {
+                width: 98%;
+                padding: 10px 10px;
+            }        
+
+
+            .desc-section {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 18px 8px;
+                text-align: left;
+                margin: 0 auto;
+                margin-bottom: 50px;            
+            }
+
+            .desc-section .desc-text {
+                text-align: left;
+                padding:0 10px;
+            }
+
+            .desc-section .desc-heading {
+                font-size: 10vw;  
+                font-weight: 900;
+                line-height: 1.5;
+                letter-spacing: -1px;
+                color: #bdb8d4;
+                text-shadow: 2px 4px 16px #23242a;
+                margin-bottom: 10px;
+            }
+
+            #boxes {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                font-size: 17px;
+            }
+            #boxes .box {
+                max-width: 95%;
+                width: 100%;
+                margin-top: 0;
+            }
+            
+            #services-intro h2 {
+                font-size: 28px;
+            }
+            
+        }
+    
+
+        /* ====== Responsive: Mobile phones (max-width: 600px) ====== */
+        @media (max-width: 600px) {
+            header {
+                padding: 2px 0 2px 8px;
+                min-height: 30px;
+            }
+            header a {
+                font-size: 15px;
+            }
+            
+            nav ul{
+                top:50px;
+            }
+
+            .hamburger {
+                margin-right: 6px;
+                margin-left: 0;
+                align-items: center;
+            }
+
+            #branding img {
+                height: 50px;
+            }
+            
+            .container {
+                width: 100%;
+                padding: 8px 0px;
+            }  
+            
+            .desc-section {
+                padding: 0px 8px;
+                gap: 10px;
+
+            }
+            
+            .desc-section .desc-heading {
+                font-size: 15vw;
+                font-weight: 900;
+                line-height: 1.5;
+                letter-spacing: -1px;
+                color: #bdb8d4;
+                text-shadow: 2px 4px 16px #23242a;
+                margin-bottom: 20px;
+            }
+            
+            .desc-section .desc-text {
+                font-size: 16px;
+                padding: 0 8px;
+                text-align: left;
+            }
+
+            #services-intro {
+                padding: 15px 5px 5px 5px;
+            }
+            
+            #services-intro h2 {
+                font-size: 18px;
+            }
+            
+            #services-intro p,
+          
+            #boxes .box {
+                padding: 8px;
+            }
+            
+            #boxes .box img {
+                max-width: 100%;
+            }
+            
+            .button_1 {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+    
+                    
+            footer {
+                font-size: 9px;
+                padding: 2px;
+            }
+        }
+        
+            
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <!-- ====== Header Section ====== -->
+        <div class="container"> 
+            <div id="branding">
+                <a href="home.html">
+                <img src="pictures/logo.png">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current">
+                        <a href="home.html">HOME</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">ABOUT</a>
+                    </li>
+
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+            </button>
+        </div>
+        
+    </header>
+
+
+    
+
+    <main>
+
+        <!-- ====== Description Section ====== -->
+        <section class="desc-section">
+        <h2 class="desc-heading">Design. Develop. Deliver. Repeat.</h2>
+        
+        <p class="desc-text">one project at a time. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum similique adipisci, voluptatibus cum eius nihil, quis distinctio suscipit cumque atque officiis sapiente numquam sit nesciunt optio cupiditate! Temporibus, harum ipsam.lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sim
+        </p>
+        </section>
+
+        <!-- ====== Service Boxes Section ====== -->
+        <section id="boxes">       
+            <div class="box">
+                <a href="graphics.html">
+                    <img src="pictures/3343973.jpg" alt="Graphic Design">
+                </a>
+                <h3>Graphic Designs</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt unde sed veritatis, officia impedit facilis. Exercitationem nostrum, ea totam, iure repellat autem iste, repudiandae asperiores accusantium quidem impedit minima obcaecati.</p>
+            </div>
+
+            <div class="box">
+                <a href="web.html">
+                    <img src="pictures/4380747.jpg" alt="Web Development">
+                </a>
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt unde sed veritatis, officia impedit facilis. Exercitationem nostrum, ea totam, iure repellat autem iste, repudiandae asperiores accusantium quidem impedit minima obcaecati.</p>
+            </div>
+
+            <div class="box">
+                <a href="doc.html">
+                    <img src="pictures/8845713.jpg" alt="Documentation">
+                </a>
+                <h3>Documentation</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt unde sed veritatis, officia impedit facilis. Exercitationem nostrum, ea totam, iure repellat autem iste, repudiandae asperiores accusantium quidem impedit minima obcaecati.</p>
+            </div>
+        </section>
+
+                  
+    </main>
+
+     <!-- ====== Footer ====== -->
+
+    <footer> 625-Enterprise, Copyright &copy; 2025</footer>
+
+    <script>
+        /*====== Hamburger Navigation Script ======*/
+        const hamburger = document.querySelector('.hamburger');
+        const navList = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent this click from bubbling to the document
+            navList.classList.toggle('show');
+        });
+
+        /*Click Page To Remove Navigation*/
+        navList.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent clicks inside nav from closing it
+        });
+
+        document.addEventListener('click', function() {
+            navList.classList.remove('show'); // allows closing of nav by clicking any part of the page
+        });
+    </script>
+</body>
+</html>

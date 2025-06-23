@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphic Designs Gallery - 625-Enterprise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #2e383f;
+      color: #fff;
+      font-family: Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .gallery-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 16px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 18px;
+      color: #bdb8d4;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+    .gallery-item {
+      background: #23242a;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+    }
+    .gallery-item img {
+      width: 100%;
+      max-height: 140px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    footer{
+      padding:5px;
+      margin-top:50px;
+      color:#ffffff;
+      background-color:#20232550;
+      text-align: center;
+      font-size: 11px;
+  
+    }
+
+    /* ======= Responsive: Tablets (max-width: 900px)====== */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .gallery-container {
+        padding: 8px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .gallery-item img {
+        max-height: 110px;
+      }
+    }
+           
+        
+    /* Mobile (phones) */
+    @media (max-width: 600px) {
+      .gallery-container {
+        padding: 4px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .gallery-item img {
+        max-height: 90px;
+      }
+
+      footer {
+          font-size: 9px;
+          padding: 2px;
+      }
+    }
+    
+    /* Modal styles */
+    #imageModal {
+      display:none;
+      position:fixed;
+      z-index:1000;
+      left:0;
+      top:0;
+      width:100vw;
+      height:100vh;
+      background:rgba(0,0,0,0.85);
+      align-items:center;
+      justify-content:center;
+    }
+    #modalContent {
+      background:#23242a;
+      border-radius:10px;
+      padding:24px 16px 16px 16px;
+      max-width:95vw;
+      max-height:90vh;
+      text-align:center;
+      position:relative;
+    }
+    #closeModal {
+      position:absolute;
+      right:15px;
+      top:10px;
+      background:none;
+      border:none;
+      color:#8b8585;
+      font-size:2rem;
+      cursor:pointer;
+    }
+    #modalImg {
+      max-width:90vw;
+      max-height:60vh;
+      border-radius:8px;
+      margin-bottom:16px;
+    }
+    #modalTitle {
+      font-weight:600;
+      margin-bottom:8px;
+      color:#bdb8d4;
+    }
+    #whatsappBtn {
+      display:inline-block;
+      background:#213f2c;
+      color:#fff;
+      padding:10px 22px;
+      border-radius:5px;
+      font-weight:600;
+      text-decoration:none;
+      font-size:16px;
+    }
+    .modal-footer {
+      margin-top:10px;
+      color:#bdb8d4;
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery-container">
+    <h2>Our Graphic Designs Samples</h2>
+    <div style="text-align:center; color:#bdb8d4; margin-bottom:30px; font-size:16px;">
+      Click any image to view or download
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+       
+          <img src="pictures/logo/logo 1.jpeg" alt="Template 1"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/logo/logo 1.jpeg', 'Template 1')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 1</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/logo/logo 2.jpeg" alt="Template 2"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/logo/logo 2.jpeg', 'Template 2')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 2</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/logo/logo 3.jpeg" alt="Template 3"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/logo/logo 3.jpeg', 'Template 3')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 3</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/logo/logo 4.jpeg" alt="Template 4"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/logo/logo 4.jpeg', 'Template 4')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 4</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/logo/logo 5.jpeg" alt="Template 5"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/logo/logo 5.jpeg', 'Template 5')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 5</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/logo/logo 6.jpeg" alt="Template 6"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/logo/logo 6.jpeg', 'Template 6')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 6</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/logo/logo 7.jpeg" alt="Template 7"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/logo/logo 7.jpeg', 'Template 7')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 7</div>
+      </div>
+       <div class="gallery-item">
+         <img src="pictures/flyer/flyer 1.jpeg" alt="Template 8"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/flyer/flyer 1.jpeg', 'Template 8')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 8</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/flyer/flyer 2.jpeg" alt="Template 9"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/flyer/flyer 2.jpeg', 'Template 9')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 9</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/flyer/flyer 3.jpeg" alt="Template 10"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/flyer/flyer 3.jpeg', 'Template 10')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 10</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/flyer/flyer 4.jpeg" alt="Template 11"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/flyer/flyer 4.jpeg', 'Template 11')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 11</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/flyer/flyer 5.jpeg" alt="Template 12"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/flyer/flyer 5.jpeg', 'Template 12')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 12</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/flyer/flyer 6.jpeg" alt="Template 13"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/flyer/flyer 6.jpeg', 'Template 13')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 13</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/flyer/flyer 7.jpeg" alt="Template 14"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/flyer/flyer 7.jpeg', 'Template 14')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 14</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/flyer/flyer 8.jpeg" alt="Template 15"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/flyer/flyer 8.jpeg', 'Template 15')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 15</div>
+      </div>
+      <div class="gallery-item">
+         <img src="pictures/flyer/flyer 9.jpeg" alt="Template 16"
+               style="cursor:pointer;"
+               onclick="openModal('pictures/flyer/flyer 9.jpeg', 'Template 16')">
+        </a>
+        <div style="font-weight:600; margin-bottom:4px;">Template 16</div>
+      </div>
+
+  <!-- Modal for full-size image -->
+  <div id="imageModal">
+    <div id="modalContent">
+      <button id="closeModal">&times;</button>
+      <img id="modalImg" src="" alt="">
+      <div id="modalTitle"></div>
+      <a id="whatsappBtn" href="#" target="_blank">
+        Contact us on WhatsApp
+      </a>
+      <div class="modal-footer">
+        Want something like this or have your own idea? Click above and describe what you want!
+      </div>
+    </div>
+  </div>
+  </div>
+  <footer>
+    &copy; 2025 625-Enterprise. All rights reserved.
+  </footer>
+
+
+  <script>
+    const whatsappNumber = '2348012345678'; // Replace with your WhatsApp number (no + or spaces)
+
+    function openModal(imgSrc, title) {
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalTitle').textContent = title;
+      const msg = encodeURIComponent(`Hello! I like the design titled "${title}". I want something like this or have a custom idea.`);
+      document.getElementById('whatsappBtn').href = `https://wa.me/${whatsappNumber}?text=${msg}`;
+      document.getElementById('imageModal').style.display = 'flex';
+    }
+    document.getElementById('closeModal').onclick = function() {
+      document.getElementById('imageModal').style.display = 'none';
+    };
+    document.getElementById('imageModal').onclick = function(e) {
+      if (e.target === this) this.style.display = 'none';
+    };
+  </script>
+</body>
+</html>

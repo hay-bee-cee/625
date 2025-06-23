@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - 625-Enterprise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: url('pictures/software-developer-6521720~2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .signup-box {
+      background: none;
+      border-radius: 4px;
+      width: 80%;
+      max-width: 250px;
+      text-align: center;
+    }
+    .signup-box img {
+        width: 250px;
+    }
+
+    .signup-box input {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    .signup-box input:focus{
+      outline: none;
+      box-shadow: none;
+    }
+    .signup-box button {
+      width: 85%;
+      padding: 10px;
+      background: #020222;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .signup-box p {
+      display: block;
+      margin-top: 18px;
+      color: aliceblue;
+      text-decoration:none;
+      font-size: 13px;
+    };
+
+   
+  </style>
+</head>
+<body>
+  <div class="signup-box">
+    <img src="pictures/logo.png" >
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="index.html" target="_blank" style = "color:#c1c1d1; font-weight: bold; text-decoration: none;">Log In</a></p>
+  </div>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const response = await fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert('Registration successful! You can now log in.');
+        window.location.href = "index.html";
+      } else {
+        alert(result.message || 'Registration failed');
+      }
+    });
+  </script>
+</body>
+</html>

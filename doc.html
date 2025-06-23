@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Templates Gallery - 625-Enterprise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #2e383f;
+      color: #fff;
+      font-family: Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .gallery-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #bdb8d4;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px; /* Match web.html */
+      background: #23242a;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .gallery-item {
+      background: none;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: none;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      object-fit: cover;
+      border-radius: 0;
+      display: block;
+      cursor: pointer;
+    }
+
+    footer{
+      padding:5px;
+      margin-top:50px;
+      color:#ffffff;
+      background-color:#20232550;
+      text-align: center;
+      font-size: 11px;
+  
+    }
+    /* ======= Responsive: Tablets (max-width: 900px)====== */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .gallery-container {
+        padding: 8px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px; /* Match web.html tablet gap */
+      }
+      .gallery-item img {
+        max-height: 110px;
+      }
+    }
+           
+        
+    /* Mobile (phones) */
+    @media (max-width: 600px) {
+      .gallery-container {
+        padding: 4px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .gallery-item img {
+        max-height: 90px;
+      }
+
+      footer {
+          font-size: 9px;
+          padding: 2px;
+      }
+    }
+    
+
+    /* Modal styles */
+    #imageModal {
+      display:none;
+      position:fixed;
+      z-index:1000;
+      left:0;
+      top:0;
+      width:100vw;
+      height:100vh;
+      background:rgba(0,0,0,0.85);
+      align-items:center;
+      justify-content:center;
+    }
+    #modalContent {
+      background:#23242a;
+      border-radius:10px;
+      padding:24px 16px 16px 16px;
+      max-width:95vw;
+      max-height:90vh;
+      text-align:center;
+      position:relative;
+    }
+    #closeModal {
+      position:absolute;
+      right:15px;
+      top:10px;
+      background:none;
+      border:none;
+      color:#fff;
+      font-size:2rem;
+      cursor:pointer;
+    }
+    #modalImg {
+      max-width:90vw;
+      max-height:60vh;
+      border-radius:8px;
+      margin-bottom:16px;
+    }
+    #modalTitle {
+      font-weight:600;
+      margin-bottom:8px;
+      color:#bdb8d4;
+    }
+    #whatsappBtn {
+      display:inline-block;
+      background:#213f2c;
+      color:#fff;
+      padding:10px 22px;
+      border-radius:5px;
+      font-weight:600;
+      text-decoration:none;
+      font-size:16px;
+    }
+    .modal-footer {
+      margin-top:10px;
+      color:#bdb8d4;
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery-container">
+    <h2>Document Template Samples</h2>
+    <div style="text-align:center; color:#bdb8d4; margin-bottom:30px; font-size:16px;">
+      Click any image to view or contact us for your own document!
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="pictures/doc/doc 1.jpg" alt=""
+             onclick="openModal('pictures/doc/doc 1.jpg', '')">
+      </div>
+      <div class="gallery-item">
+        <img src="pictures/doc/doc 2.jpg" alt=""
+             onclick="openModal('pictures/doc/doc 2.jpg', '')">
+      </div>
+      <div class="gallery-item">
+        <img src="pictures/doc/doc 3.jpg" alt=""
+             onclick="openModal('pictures/doc/doc 3.jpg', '')">
+      </div>
+      <div class="gallery-item">
+        <img src="pictures/doc/doc 4.jpg" alt=""
+             onclick="openModal('pictures/doc/doc 4.jpg', '')">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for full-size image -->
+  <div id="imageModal">
+    <div id="modalContent">
+      <button id="closeModal">&times;</button>
+      <img id="modalImg" src="" alt="">
+      <div id="modalTitle"></div>
+      <a id="whatsappBtn" href="#" target="_blank">
+        Contact us on WhatsApp
+      </a>
+      <div class="modal-footer">
+        Want something like this or have your own idea? Click above and describe what you want!
+      </div>
+    </div>
+  </div>
+  <footer> 625-Enterprise, Copyright &copy; 2025</footer>
+
+  <script>
+    const whatsappNumber = '2348012345678'; // Replace with your WhatsApp number (no + or spaces)
+
+    function openModal(imgSrc, title) {
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalTitle').textContent = title;
+      const msg = encodeURIComponent(`Hello! I like the design titled "${title}". I want something like this or have a custom idea.`);
+      document.getElementById('whatsappBtn').href = `https://wa.me/${whatsappNumber}?text=${msg}`;
+      document.getElementById('imageModal').style.display = 'flex';
+    }
+    document.getElementById('closeModal').onclick = function() {
+      document.getElementById('imageModal').style.display = 'none';
+    };
+    document.getElementById('imageModal').onclick = function(e) {
+      if (e.target === this) this.style.display = 'none';
+    };
+  </script>
+</body>
+</html>
