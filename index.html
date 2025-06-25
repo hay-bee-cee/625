@@ -1,177 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="pictures/favicon.png">
-    <title>625-enterprise | Welcome</title>
+    <meta name="description" content="625-Enterprise offers professional documentation, research, graphic design, and web development services. We help you present smarter, research deeper, and create better results for your projects.">
+    <title>625-Enterprise | Home</title>
+    <link rel="stylesheet" href="styles.css">
+
     <style>
 
-      /*=====Base Style=====*/
-      body {
-        background-color: hsl(0, 1%, 19%);
-        font-family: Arial, Helvetica, sans-serif;
-        color: whitesmoke;
-        margin: 0;
-      }
-
-      /*=====Hero Content=====*/
-      .hero {
-        position: relative;
-        display: flex;
-        background-image: url('pictures/pen-4337524.jpg'); 
-        background-size: cover ;
-        background-position: center;
-        justify-content: center;  
-        align-items: center;   
-        height: 100vh;            
-        color: rgba(245, 245, 245, 0.884);              
-      }
-
-      .hero-content {
-        text-align: center;
-        padding: 20px;
-        border-radius: 10px;
-        opacity: 0;
-        transition: opacity 3s;
-      }
-      .hero-content img {
-        width: 250px;
-        margin-bottom: 5px;
-      }
-
-      input { 
-        padding:8px; 
-        border-radius:4px; 
-        border:none; 
-        margin-bottom:10px; 
-        width: 80%; 
-        max-width: 250px;
-      }
-
-      input:focus{
-        outline: none;
-        box-shadow: none;
-      }
-
-      .hero-btn{
-        margin-top: 10px;
-        padding: 10px 20px;
-        background-color: rgb(2, 2, 34);
-        color: white;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-        font: 13px sans-serif;
-        font-weight: 600;
-        width: 80%; 
-        max-width: 250px;
-        border:none;
-        cursor:pointer
-      }
-
-      .hero-btn:hover {
-        background-color: rgb(0, 0, 17);
-      }
-
-      /*=====Tablets (max-width: 900px)===== */
-      @media (max-width: 900px) {
-        .hero-content p {
-          font-size: 14px;
+        /*=====Base Styles=====*/
+        body {
+            background-color:hsl(0, 1%, 19%);
+            font: 15px Helvetica, sans-serif;
+            padding:0;
+            margin:0;
+            height:100%;
+            display: flex;
+            flex-direction: column;
         }
-        .hero-content img {
-        width: 200px;
+    
+        .container {
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap:10px;
         }
 
-        .hero-btn {
-          padding: 9px 16px;
-          font-size: 12px;
+        
+
+        /*=====Header Styles=====*/
+        header{
+            color:aliceblue;
+            padding:30px 100px 0px 130px;
+            min-height:100px;
+            margin-bottom: 0;
+            background-color: #2e383f;
+            position:fixed;
+            top:0;
+            left:0;
+            width: 100vw;
+            box-sizing: border-box;
+            z-index: 1002;
+            box-shadow: 0 0px 10px 0 rgba(0,0,0,0.25);
         }
-      }
 
-      /* ======Mobile phones (max-width: 600px)====== */
-      @media (max-width: 600px) {
-
-        .hero-content p {
-          font-size: 12px;
+        
+        header nav{
+            margin-top:5px;
+            margin-bottom: 15px;
         }
-        .hero-btn {
-          padding: 8px 14px;
-          font-size: 11px;
+
+        header ul {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin-right: 30px;
+            padding: 0;
         }
-      }
 
-    </style>
-  </head>
+        /*=====Navigation Styles=====*/
+        ul{
+            margin:0;
+            padding:0;
+        }
+        
+        header a{
+            color:aliceblue;
+            text-decoration:none;
+            font-size:13px;
+            font-weight: 550;
+        }
 
-  <body>
+        header a:hover{
+            color:#98a3aa;
+        }
+  
+        header li {
+            display:inline;
+            padding: 0 10px 0 10px;
+        }
 
-    <!--=====Hero Content====-->
-    <section class="hero">
-      <div class="hero-content">
-        <img src="pictures/logo.png" >
-         
-        <!-- Login Form Start -->
-        <form class="login-form" style="margin-bottom: 20px;">
-          <input 
-            type="text" 
-            placeholder="Username" 
-            required
-            >
+        header .highlight, 
+        header .current a{
+            color:rgb(189, 184, 212);
+            font-weight:bold;
+        }
 
-          <br>
+         #branding img {
+                height: 60px;
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
 
-          <input 
-            type="password" 
-            placeholder="Password" 
-            required
-          >
 
-          <br>
+        /*=====Hamburger Menu Styles=====*/
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            gap: 7px;
+            margin-left: 8px;
+            margin-right: 0;
+            z-index: 100;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 4px;
+            width: 22px;
+            background: aliceblue;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+  
+        /* ====== Main Content====== */        
+        main{
+            padding-top: 100px;
+        }
+
+        /* ====== Description Section ====== */        
+        .desc-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 30px auto 0 auto;
+            padding: 24px 18px;
+            border-radius: 10px;
+            color: aliceblue;
+
+        }
+
+        .desc-section .desc-heading {
+            font-size: 5.8em;
+            font-weight: bold;
+            margin: 10px 0 10px 0;
+            align-self: start;
+        }
+
+        .desc-section .desc-text {
+            font-size: 1.2em;
+            font-weight: 500;
+            line-height: 2.5;
+            color: #fff;
+            margin-top:10px;
+            text-align: center;
+        }
+
+        /* ====== Services Intro Section ====== */       
+        #services-intro {
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px 10px 20px;
+            background-color: #3856686e;
+            margin-top: 20px;
+        }
+
+        #services-intro h2 {
+            font-size: 39px;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+
+        #services-intro p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.6;
+            word-spacing: 4px;
+            color: #cccccc;
+            margin-bottom: 50px;
+        }
+
+         /* ====== Service Boxes Section ====== */
+         #boxes {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: aliceblue;
+            background-color: #2e383f;
+            margin-top: 0px;
+        }       
+        
+       #boxes .box {
+            flex: 1 1 30%;
+            max-width: 32%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;       
+        }
+  
+        #boxes .box img{
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.685);
+             transition: 0.5s ease-in-out; 
+        }
+
+        #boxes a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        #boxes a img:hover {
+            box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.87);
+            transition: 1s ease-in-out; 
+        }
+       
+        /* ====== Footer Styles ====== */        
+        footer{
+            padding:5px;
+            margin-top:50px;
+            color:#ffffff;
+            background-color:#20232550;
+            text-align: center;
+            font-size: 11px;
+        
+        }
+
+        /* ======= Responsive: Tablets (max-width: 900px)====== */
+        @media (max-width: 900px) {
+            header {
+                margin-bottom: 0;
+                padding: 0 0 0 4px;
+                min-height:80px;
+            }
+
+            header a{
+                font-size: 18px;
+            }
+                    
+            header nav ul {
+                flex-direction: column;
+                gap: 7px;
+                width: 100%;
+                padding:0 0;
+            }
+            header li {            
+                width: 100%;
+                text-align: right;        
+            }
+
+            header .container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            #branding img {
+                height: 50px;
+            }
+
+            /*===== Hamburger nav dropdown styles=====*/       
+            .hamburger {
+                display: flex;
+                margin-right: 0;
+                margin-left: 8px;
+                align-items: center;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: none;
+                position: absolute;
+                top: 80px;
+                left:0;
+                right:auto;
+                min-width:100%;
+                width:auto;
+                z-index: 1000;
+                padding: 10px 0;
+                align-items: flex-end;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .container {
+                width: 98%;
+                padding: 10px 10px;
+            }        
+
+
+            .desc-section {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 18px 8px;
+                text-align: left;
+                margin: 0 auto;
+                margin-bottom: 50px;            
+            }
+
+            .desc-section .desc-text {
+                text-align: left;
+                padding:0 10px;
+            }
+
+            .desc-section .desc-heading {
+                font-size: 10vw;  
+                font-weight: 900;
+                line-height: 1.5;
+                letter-spacing: -1px;
+                color: #bdb8d4;
+                text-shadow: 2px 4px 16px #23242a;
+                margin-bottom: 10px;
+            }
+
+            #boxes {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                font-size: 17px;
+            }
+            #boxes .box {
+                max-width: 95%;
+                width: 100%;
+                margin-top: 0;
+            }
+            
+            #services-intro h2 {
+                font-size: 28px;
+            }
+            
+        }
+    
+
+        /* ====== Responsive: Mobile phones (max-width: 600px) ====== */
+        @media (max-width: 600px) {
+            header {
+                padding: 2px 0 2px 8px;
+                min-height: 30px;
+            }
+            header a {
+                font-size: 15px;
+            }
+            
+            nav ul{
+                top:50px;
+            }
+
+            .hamburger {
+                margin-right: 6px;
+                margin-left: 0;
+                align-items: center;
+            }
+
+            #branding img {
+                height: 50px;
+            }
+            
+            .container {
+                width: 100%;
+                padding: 8px 0px;
+            }  
+            
+            .desc-section {
+                padding: 0px 8px;
+                gap: 10px;
+
+            }
+            
+            .desc-section .desc-heading {
+                font-size: 9vw;
+                font-weight: 900;
+                line-height: 1.5;
+                letter-spacing: -1px;
+                color: #bdb8d4;
+                text-shadow: 2px 4px 16px #23242a;
+                margin-bottom: 20px;
+            }
+            
+            .desc-section .desc-text {
+                font-size: 16px;
+                padding: 0 8px;
+                text-align: left;
+            }
+
+            #services-intro {
+                padding: 15px 5px 5px 5px;
+            }
+            
+            #services-intro h2 {
+                font-size: 18px;
+            }
+            
+            #services-intro p,
           
-          <button 
-            type="submit" 
-            class="hero-btn"
-          >Log In</button>
-        </form>
-        <p style="margin-bottom: 30px; font-size: 14px;">
-          Don't have an account?
-          <a href="signup.html" target="_blank" style = "color:#2a2a4a; font-weight: bold; text-decoration: none;">Sign Up</a>
+            #boxes .box {
+                padding: 8px;
+            }
+            
+            #boxes .box img {
+                max-width: 100%;
+            }
+            
+            .button_1 {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+    
+                    
+            footer {
+                font-size: 9px;
+                padding: 2px;
+            }
+        }
+        
+            
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <!-- ====== Header Section ====== -->
+        <div class="container"> 
+            <div id="branding">
+                <a href="home.html">
+                <img src="pictures/logo.png">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current">
+                        <a href="index.html">HOME</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">ABOUT</a>
+                    </li>
+
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+            </button>
+        </div>
+        
+    </header>
+
+
+    
+
+    <main>
+
+        <!-- ====== Description Section ====== -->
+        <section class="desc-section">
+        <h2 class="desc-heading">Design. Develop. Deliver. Repeat.</h2>
+        
+        <p class="desc-text">At 625-Enterprise, we combine creative strategy, cutting-edge development, and detailed research to bring your ideas to life. Whether you need compelling graphics, seamless websites, or rock-solid documentation, we turn your vision into results — efficiently and elegantly. <a href="contact.html" style="color:#bdb8d4; text-decoration:underline;">Get in touch</a> to start your next project.
         </p>
+        </section>
 
+        <!-- ====== Service Boxes Section ====== -->
+        <section id="boxes">       
+            <div class="box">
+                <a href="graphics.html">
+                    <img src="pictures/3343973.jpg" alt="Graphic Design">
+                </a>
+                <h3>Graphic Designs</h3>
+                <p>From logos to full-scale branding, we craft compelling visuals that resonate. Our design team blends aesthetics with strategy to help your message stand out — whether it’s for print, web, or social campaigns. <strong>Select box to view more.</strong></p>
+            </div>
 
+            <div class="box">
+                <a href="web.html">
+                    <img src="pictures/4380747.jpg" alt="Web Development">
+                </a>
+                <h3>Web Development</h3>
+                <p>    Build your digital presence with custom websites that are responsive, scalable, and performance-optimized. We specialize in modern frontend and backend development tailored to your unique business needs. <strong>Select box to view more.</strong></p>
+            </div>
 
-      </div>
+            <div class="box">
+                <a href="doc.html">
+                    <img src="pictures/8845713.jpg" alt="Documentation">
+                </a>
+                <h3>Documentation</h3>
+                <p><p>
+    Clear, structured, and professional documentation — from user guides to technical manuals. We ensure your processes, products, or research are thoroughly and intelligently presented for maximum clarity and impact. <strong>Select box to view more.</strong></p>
+            </div>
+        </section>
 
-    </section>
+                  
+    </main>
+
+     <!-- ====== Footer ====== -->
+
+    <footer> 625-Enterprise, Copyright &copy; 2025</footer>
 
     <script>
-      // Fade In of Hero-content
-      window.onload = function() {
-        document.querySelector('.hero-content').style.opacity = 1;
-      };
+        /*====== Hamburger Navigation Script ======*/
+        const hamburger = document.querySelector('.hamburger');
+        const navList = document.querySelector('nav ul');
 
-      // Handle login form submission
-      document.querySelector('.login-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const username = this.querySelector('input[type="text"]').value;
-        const password = this.querySelector('input[type="password"]').value;
-
-        const response = await fetch('http://localhost:3000/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, password })
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent this click from bubbling to the document
+            navList.classList.toggle('show');
         });
 
-        const result = await response.json();
-        if (result.success) {
-          window.location.href = "home.html"; // Redirect to home page on success
-        } else {
-          alert(result.message || 'Login failed');
-        }
-      });
+        /*Click Page To Remove Navigation*/
+        navList.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent clicks inside nav from closing it
+        });
+
+        document.addEventListener('click', function() {
+            navList.classList.remove('show'); // allows closing of nav by clicking any part of the page
+        });
     </script>
-  </body>
+</body>
 </html>
-
-

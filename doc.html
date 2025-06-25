@@ -12,6 +12,96 @@
       margin: 0;
       padding: 0;
     }
+    header{
+            color:aliceblue;
+            padding:30px 100px 0px 130px;
+            min-height:100px;
+            margin-bottom: 0;
+            background-color: #2e383f;
+            position:fixed;
+            top:0;
+            left:0;
+            width: 100vw;
+            box-sizing: border-box;
+            z-index: 1002;
+            box-shadow: 0 0px 10px 0 rgba(0,0,0,0.25);
+        }
+
+        
+        header nav{
+            margin-top:5px;
+            margin-bottom: 15px;
+        }
+
+        header ul {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin-right: 30px;
+            padding: 0;
+        }
+
+         ul{
+            margin:0;
+            padding:0;
+        }
+        
+        header a{
+            color:aliceblue;
+            text-decoration:none;
+            font-size:13px;
+            font-weight: 550;
+        }
+
+        header a:hover{
+            color:#98a3aa;
+        }
+  
+        header li {
+            display:inline;
+            padding: 0 10px 0 10px;
+        }
+
+        header .highlight, 
+        header .current a{
+            color:rgb(189, 184, 212);
+            font-weight:bold;
+        }
+
+         #branding img {
+                height: 60px;
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+
+
+        /*=====Hamburger Menu Styles=====*/
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            gap: 7px;
+            margin-left: 8px;
+            margin-right: 0;
+            z-index: 100;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 4px;
+            width: 22px;
+            background: aliceblue;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+  
+
     .gallery-container {
       max-width: 1200px;
       margin: 40px auto;
@@ -69,11 +159,96 @@
       .gallery-item img {
         max-height: 110px;
       }
+
+      header {
+                margin-bottom: 0;
+                padding: 0 0 0 4px;
+                min-height:80px;
+            }
+
+            header a{
+                font-size: 18px;
+            }
+                    
+            header nav ul {
+                flex-direction: column;
+                gap: 7px;
+                width: 100%;
+                padding:0 0;
+            }
+            header li {            
+                width: 100%;
+                text-align: right;        
+            }
+
+            header .container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            #branding img {
+                height: 50px;
+            }
+
+            /*===== Hamburger nav dropdown styles=====*/       
+            .hamburger {
+                display: flex;
+                margin-right: 0;
+                margin-left: 8px;
+                align-items: center;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: none;
+                position: absolute;
+                top: 80px;
+                left:0;
+                right:auto;
+                min-width:100%;
+                width:auto;
+                z-index: 1000;
+                padding: 10px 0;
+                align-items: flex-end;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .container {
+                width: 98%;
+                padding: 10px 10px;
+            }        
+
     }
            
         
     /* Mobile (phones) */
     @media (max-width: 600px) {
+       header {
+                padding: 2px 0 2px 8px;
+                min-height: 30px;
+            }
+            header a {
+                font-size: 15px;
+            }
+            
+            nav ul{
+                top:50px;
+            }
+
+            .hamburger {
+                margin-right: 6px;
+                margin-left: 0;
+                align-items: center;
+            }
+
+            #branding img {
+                height: 50px;
+            }
       .gallery-container {
         padding: 4px;
       }
