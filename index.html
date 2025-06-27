@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="625-Enterprise offers professional documentation, research, graphic design, and web development services. We help you present smarter, research deeper, and create better results for your projects.">
+    <meta name="keywords" content="documentation, research, graphic design, web development, branding, 625-Enterprise, creative agency, technical writing, digital solutions">
+    <meta name="author" content="625-Enterprise">
+    <link rel="canonical" href="https://625-enterprise.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="625-Enterprise | Home">
+    <meta property="og:description" content="Professional documentation, research, graphic design, and web development services. Present smarter, research deeper, and create better results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://625-enterprise.com/">
+    <meta property="og:image" content="https://625-enterprise.com/pictures/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="625-Enterprise | Home">
+    <meta name="twitter:description" content="Professional documentation, research, graphic design, and web development services. Present smarter, research deeper, and create better results.">
+    <meta name="twitter:image" content="https://625-enterprise.com/pictures/logo.png">
+
     <title>625-Enterprise | Home</title>
     <link rel="stylesheet" href="styles.css">
 
@@ -45,7 +62,7 @@
             width: 100vw;
             box-sizing: border-box;
             z-index: 1002;
-            box-shadow: 0 0px 10px 0 rgba(0,0,0,0.25);
+
         }
 
         
@@ -157,31 +174,7 @@
             text-align: center;
         }
 
-        /* ====== Services Intro Section ====== */       
-        #services-intro {
-            color: #ffffff;
-            text-align: center;
-            padding: 40px 20px 10px 20px;
-            background-color: #3856686e;
-            margin-top: 20px;
-        }
-
-        #services-intro h2 {
-            font-size: 39px;
-            margin-bottom: 10px;
-            color: #e0e0e0;
-        }
-
-        #services-intro p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
-            line-height: 1.6;
-            word-spacing: 4px;
-            color: #cccccc;
-            margin-bottom: 50px;
-        }
-
+       
          /* ====== Service Boxes Section ====== */
          #boxes {
             display: flex;
@@ -206,8 +199,6 @@
             width: 100%;
             max-width: 350px;
             height: auto;
-            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.685);
-             transition: 0.5s ease-in-out; 
         }
 
         #boxes a {
@@ -215,11 +206,7 @@
             text-decoration: none;
         }
 
-        #boxes a img:hover {
-            box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.87);
-            transition: 1s ease-in-out; 
-        }
-       
+        
         /* ====== Footer Styles ====== */        
         footer{
             padding:5px;
@@ -274,13 +261,13 @@
             nav ul {
                 display: none;
                 flex-direction: column;
-                background: none;
+                background: #2e383f;
                 position: absolute;
                 top: 80px;
                 left:0;
                 right:auto;
                 min-width:100%;
-                width:auto;
+
                 z-index: 1000;
                 padding: 10px 0;
                 align-items: flex-end;
@@ -307,6 +294,7 @@
             }
 
             .desc-section .desc-text {
+                display:none;
                 text-align: left;
                 padding:0 10px;
             }
@@ -333,9 +321,6 @@
                 margin-top: 0;
             }
             
-            #services-intro h2 {
-                font-size: 28px;
-            }
             
         }
     
@@ -376,29 +361,23 @@
             }
             
             .desc-section .desc-heading {
-                font-size: 9vw;
+                font-size: 12vw;
                 font-weight: 900;
                 line-height: 1.5;
                 letter-spacing: -1px;
                 color: #bdb8d4;
                 text-shadow: 2px 4px 16px #23242a;
-                margin-bottom: 20px;
+                margin-bottom: 0px;
             }
             
             .desc-section .desc-text {
                 font-size: 16px;
                 padding: 0 8px;
                 text-align: left;
+                display: none;
             }
 
-            #services-intro {
-                padding: 15px 5px 5px 5px;
-            }
-            
-            #services-intro h2 {
-                font-size: 18px;
-            }
-            
+
             #services-intro p,
           
             #boxes .box {
