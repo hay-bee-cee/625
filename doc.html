@@ -27,7 +27,15 @@
       font-family: Helvetica, sans-serif;
       margin: 0;
       padding: 0;
+      opacity: 0;
+      animation: fadeInBg 1.2s ease-in forwards;
     }
+
+    @keyframes fadeInBg {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
     header{
             color:aliceblue;
             padding:30px 100px 0px 130px;

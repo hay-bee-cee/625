@@ -28,13 +28,20 @@
 
         /*=====Base Styles=====*/
         body {
-            background-color:hsl(0, 1%, 19%);
+            background-color: hsl(0, 1%, 19%);
             font: 15px Helvetica, sans-serif;
-            padding:0;
-            margin:0;
-            height:100%;
+            padding: 0;
+            margin: 0;
+            height: 100%;
             display: flex;
             flex-direction: column;
+            opacity: 0;
+            animation: fadeInBg 1.2s ease-in forwards;
+        }
+
+        @keyframes fadeInBg {
+            from { opacity: 0; }
+            to   { opacity: 1; }
         }
     
         .container {
